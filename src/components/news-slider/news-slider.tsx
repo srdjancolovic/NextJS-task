@@ -18,6 +18,7 @@ const NewsSlider = () => {
     return (
         <div>
             <Swiper
+                grabCursor
                 breakpoints={{
                     0: { spaceBetween: 20, slidesPerView: 'auto' },
                     650: { spaceBetween: 24, slidesPerView: 2 },
