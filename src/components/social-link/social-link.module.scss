@@ -1,0 +1,27 @@
+@use '../../styles/colors' as colors;
+@use '../../styles/mixins' as mixin;
+
+.social-link {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    text-decoration: none;
+    color: colors.$darkGray;
+    transition: color 0.3s ease-in-out;
+    white-space: nowrap;
+    letter-spacing: -0.02em;
+
+    @include mixin.mq('from', 480) {
+        font-size: 16px;
+    }
+
+    @include mixin.mq('to', 480) {
+        font-size: 14px;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            color: colors.$black;
+        }
+    }
+}

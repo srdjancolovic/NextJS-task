@@ -1,0 +1,46 @@
+@use '../../styles/colors' as colors;
+@use '../../styles/mixins' as mixin;
+
+.text {
+    letter-spacing: -0.03em;
+
+    &--size-16 {
+        font-size: 16px;
+    }
+
+    &--size-20 {
+        @include mixin.mq('from', 480) {
+            font-size: 20px;
+        }
+
+        @include mixin.mq('to', 480) {
+            font-size: 16px;
+        }
+    }
+
+    &--line-height-100 {
+        line-height: 1;
+    }
+
+    &--line-height-135 {
+        line-height: 1.35;
+    }
+
+    &--weight-500 {
+        font-weight: 500;
+    }
+
+    &--color-black {
+        color: colors.$black;
+    }
+
+    &--color-darkGray {
+        color: colors.$darkGray;
+    }
+
+    &--with-underline-tablet-desktop {
+        @include mixin.mq('from', 480) {
+            border-bottom: 1px solid colors.$gray;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@use '../../styles/colors' as colors;
+@use '../../styles/mixins' as mixin;
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &__button {
+        color: colors.$gray2;
+        cursor: pointer;
+
+        @include mixin.mq('from', 480) {
+            font-size: 16px;
+        }
+
+        @include mixin.mq('to', 480) {
+            font-size: 14px;
+        }
+
+        &--active {
+            color: colors.$black;
+        }
+    }
+}

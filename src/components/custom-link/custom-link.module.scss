@@ -1,0 +1,41 @@
+@use '../../styles/colors' as colors;
+
+.custom-link {
+    letter-spacing: -0.03em;
+    text-decoration: none;
+    transition: opacity 0.3s ease-in-out;
+
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    &--size-16 {
+        font-size: 16px;
+    }
+
+    &--size-20 {
+        font-size: 20px;
+    }
+
+    &--line-height-110 {
+        line-height: 1.1;
+    }
+
+    &--weight-500 {
+        font-weight: 500;
+    }
+
+    &--color-black {
+        color: colors.$black;
+    }
+
+    &--color-darkGray {
+        color: colors.$darkGray;
+    }
+
+    &--color-light-gray {
+        color: colors.$gray2;
+    }
+}

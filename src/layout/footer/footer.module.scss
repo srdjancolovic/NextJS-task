@@ -1,0 +1,157 @@
+@use '../../styles/colors' as colors;
+@use '../../styles/mixins' as mixin;
+
+.footer {
+    background-color: colors.$lightGray;
+    padding-top: 80px;
+
+    @include mixin.mq('from', 480) {
+        padding-bottom: 60px;
+    }
+
+    @include mixin.mq('to', 480) {
+        padding-bottom: 20px;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-bottom: 40px;
+
+        @include mixin.mq('from', 480) {
+            border-bottom: 1px solid colors.$gray;
+        }
+
+        @include mixin.mq('fromto', 480, 1280) {
+            gap: 36px;
+        }
+
+        @include mixin.mq('to', 1280) {
+            flex-direction: column;
+        }
+
+        @include mixin.mq('to', 480) {
+            gap: 24px;
+        }
+    }
+
+    &__logo {
+        @include mixin.mq('from', 480) {
+            width: 55px;
+            height: 62px;
+        }
+
+        @include mixin.mq('to', 1280) {
+            margin-inline: auto;
+        }
+    }
+
+    &__links-group {
+        display: flex;
+        flex-direction: column;
+
+        @include mixin.mq('from', 480) {
+            gap: 20px;
+        }
+
+        @include mixin.mq('to', 480) {
+            gap: 12px;
+        }
+    }
+
+    &__data-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__data-layout-content {
+        display: flex;
+        flex-direction: column;
+
+        @include mixin.mq('from', 480) {
+            gap: 20px;
+        }
+
+        @include mixin.mq('to', 480) {
+            gap: 12px;
+        }
+    }
+
+    &__links-columns {
+        display: flex;
+
+        @include mixin.mq('from', 480) {
+            gap: 60px;
+        }
+
+        @include mixin.mq('to', 480) {
+            flex-direction: column;
+            gap: 45px;
+        }
+    }
+
+    &__links-group {
+        &--subgroup {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        &--subgroup-links {
+            padding-left: 4px;
+        }
+    }
+
+    &__social-copyright-languages {
+        @include mixin.mq('from', 480) {
+            padding-top: 40px;
+        }
+
+        @include mixin.mq('from', 767) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @include mixin.mq('to', 767) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: space-between;
+            gap: 20px;
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__copyright {
+        &--hide-on-mobile {
+            @include mixin.mq('to', 767) {
+                display: none;
+            }
+        }
+
+        &--hide-on-desktop {
+            grid-column: 1 / -1;
+
+            @include mixin.mq('from', 767) {
+                display: none;
+            }
+        }
+    }
+
+    &__copyright-languages {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    &__languages {
+        margin-left: auto;
+    }
+}
