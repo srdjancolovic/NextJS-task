@@ -18,7 +18,7 @@ const CustomLink: FC<CustomLinkProps> = ({
     size = 16,
     weight = 400,
     color = 'black',
-    lineHeight = 110,
+    lineHeight = 100,
 }) => {
     const linkClasses = classNames(
         styles['custom-link'],

@@ -1,0 +1,84 @@
+@use '../../styles/colors' as colors;
+@use '../../styles/mixins' as mixin;
+
+.news-slider {
+    @include mixin.mq('to', 480) {
+        padding-right: 20px;
+    }
+
+    &__slide {
+        background-color: colors.$lightGray;
+        border-radius: 6px;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+
+            @include mixin.mq('to', 480) {
+                height: 146px;
+            }
+
+            @include mixin.mq('from', 480) {
+                height: 278px;
+            }
+        }
+
+        @include mixin.mq('to', 480) {
+            width: 284px;
+            padding: 12px;
+        }
+
+        @include mixin.mq('from', 480) {
+            width: 284px;
+            padding: 12px 12px 15px;
+        }
+    }
+
+    &__slide-year-badge {
+        display: inline-block;
+        color: colors.$white;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        border-radius: 2px;
+        background-color: colors.$green1;
+        margin-top: 15px;
+
+        @include mixin.mq('to', 480) {
+            font-size: 12px;
+            padding: 8px 10px;
+        }
+
+        @include mixin.mq('from', 480) {
+            font-size: 14px;
+            padding: 4px 12px;
+        }
+    }
+
+    &__slide-title {
+        margin-top: 15px;
+    }
+
+    &__slide-date {
+        margin-top: 49px;
+
+        @include mixin.mq('to', 480) {
+            display: none;
+        }
+    }
+
+    &__slide-mobile-cta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: colors.$darkGray;
+        margin-top: 15px;
+
+        @include mixin.mq('from', 480) {
+            display: none;
+        }
+    }
+}

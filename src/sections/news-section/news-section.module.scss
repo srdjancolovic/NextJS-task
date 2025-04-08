@@ -1,0 +1,25 @@
+@use '../../styles/mixins' as mixin;
+
+.news-section {
+    @include mixin.mq('from', 480) {
+        padding-top: 166px;
+        padding-bottom: 283px;
+    }
+
+    @include mixin.mq('to', 480) {
+        padding-block: 100px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        @include mixin.mq('from', 480) {
+            gap: 64px;
+        }
+
+        @include mixin.mq('to', 480) {
+            gap: 24px;
+        }
+    }
+}

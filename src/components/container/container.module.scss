@@ -3,6 +3,20 @@
 
 .container {
     max-width: 1600px;
-    padding-inline: 20px;
     margin-inline: auto;
+
+    &--default-padding {
+        padding-inline: 20px;
+    }
+
+    &--no-padding-right-on-mobile {
+        @include mixin.mq('from', 480) {
+            padding-inline: 20px;
+        }
+
+        @include mixin.mq('to', 480) {
+            padding-left: 20px;
+            padding-right: 0;
+        }
+    }
 }

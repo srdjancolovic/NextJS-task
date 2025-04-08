@@ -1,8 +1,8 @@
 @use '../../styles/colors' as colors;
+@use '../../styles/mixins' as mixin;
 
 .custom-link {
     letter-spacing: -0.03em;
-    text-decoration: none;
     transition: opacity 0.3s ease-in-out;
 
     @media (hover: hover) {
@@ -16,11 +16,29 @@
     }
 
     &--size-20 {
-        font-size: 20px;
+        @include mixin.mq('from', 480) {
+            font-size: 20px;
+        }
+
+        @include mixin.mq('to', 480) {
+            font-size: 16px;
+        }
+    }
+
+    &--line-height-100 {
+        line-height: 1;
     }
 
     &--line-height-110 {
         line-height: 1.1;
+    }
+
+    &--line-height-120 {
+        line-height: 1.2;
+    }
+
+    &--weight-400 {
+        font-weight: 400;
     }
 
     &--weight-500 {

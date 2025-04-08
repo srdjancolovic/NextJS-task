@@ -1,0 +1,30 @@
+@use '../../styles/colors' as colors;
+@use '../../styles/mixins' as mixin;
+
+.h2-heading {
+    color: colors.$black;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+
+    @include mixin.mq('from', 480) {
+        font-size: 52px;
+        line-height: 1.1;
+    }
+
+    @include mixin.mq('to', 480) {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    &--align-left {
+        text-align: left;
+    }
+
+    &--align-right {
+        text-align: right;
+    }
+
+    &--align-center {
+        text-align: center;
+    }
+}

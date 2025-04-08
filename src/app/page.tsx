@@ -1,3 +1,9 @@
+import NewsSection from '@/sections/news-section/news-section';
+
 export default function Home() {
-    return <h2>Pocetna stranica</h2>;
+    return (
+        <>
+            <NewsSection />
+        </>
+    );
 }

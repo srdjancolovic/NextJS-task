@@ -9,7 +9,7 @@
     }
 
     &--size-20 {
-        @include mixin.mq('from', 480) {
+        @include mixin.mq('from', 481) {
             font-size: 20px;
         }
 
@@ -22,8 +22,16 @@
         line-height: 1;
     }
 
+    &--line-height-120 {
+        line-height: 1.2;
+    }
+
     &--line-height-135 {
         line-height: 1.35;
+    }
+
+    &--weight-400 {
+        font-weight: 400;
     }
 
     &--weight-500 {
