@@ -1,0 +1,40 @@
+@use '../../styles/colors' as colors;
+@use '../../styles/mixins' as mixin;
+
+.home-hero-section {
+    background-color: colors.$lightGray;
+
+    &__content {
+        display: flex;
+
+        @include mixin.mq('from', 480) {
+            gap: 149px;
+            align-items: center;
+        }
+
+        @include mixin.mq('to', 480) {
+            flex-direction: column-reverse;
+
+            h1,
+            p {
+                text-align: center;
+            }
+        }
+    }
+
+    &__text-search {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        @include mixin.mq('from', 480) {
+            gap: 40px;
+            max-width: 640px;
+            padding-right: 40px;
+        }
+
+        @include mixin.mq('to', 480) {
+            gap: 24px;
+        }
+    }
+}

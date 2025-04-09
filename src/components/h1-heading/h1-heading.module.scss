@@ -1,0 +1,76 @@
+@use '../../styles/colors' as colors;
+@use '../../styles/mixins' as mixin;
+
+.h1-heading {
+    color: colors.$black;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+
+    @include mixin.mq('from', 1280) {
+        font-size: 64px;
+        line-height: 1.1;
+    }
+
+    @include mixin.mq('fromto', 480, 1280) {
+        font-size: 44px;
+        line-height: 1.1;
+    }
+
+    @include mixin.mq('to', 480) {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    &--align-left {
+        text-align: left;
+    }
+
+    &--align-right {
+        text-align: right;
+    }
+
+    &--align-center {
+        text-align: center;
+    }
+
+    &--underline {
+        span {
+            &:last-child {
+                margin-right: 0;
+            }
+
+            @include mixin.mq('from', 480) {
+                margin-right: 10px;
+            }
+
+            @include mixin.mq('to', 480) {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    span[data-underline='true'] {
+        position: relative;
+        display: inline-block;
+        z-index: 2;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            background-color: colors.$gray2;
+            z-index: -1;
+
+            @include mixin.mq('from', 480) {
+                height: 3px;
+            }
+
+            @include mixin.mq('to', 480) {
+                height: 2px;
+            }
+        }
+    }
+}
