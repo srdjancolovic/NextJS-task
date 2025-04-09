@@ -22,4 +22,14 @@
             gap: 24px;
         }
     }
+
+    &__cta {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+
+        @include mixin.mq('from', 480) {
+            display: none;
+        }
+    }
 }

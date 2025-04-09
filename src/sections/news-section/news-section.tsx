@@ -1,5 +1,7 @@
 import Container from '@/components/container/container';
 import H2Heading from '@/components/h2-heading/h2-heading';
+import LinkArrowBold from '@/components/icons/link-arrow-bold/link-arrow-bold';
+import LinkButton from '@/components/button/link-button/link-button';
 import NewsSlider from '@/components/news-slider/news-slider';
 import { PostDataTypes } from '@/types/post-types';
 import { getPostsData } from '@/lib/getPostsData';
@@ -35,6 +37,15 @@ const NewsSection = async () => {
                         alignment="center"
                     />
                     <NewsSlider data={dataForSlider} />
+                </div>
+                <div className={styles['news-section__cta']}>
+                    <LinkButton
+                        linkTitle="Voir toutes les actualités"
+                        linkTo="/"
+                    >
+                        {' '}
+                        {<LinkArrowBold />}{' '}
+                    </LinkButton>
                 </div>
             </Container>
         </section>
