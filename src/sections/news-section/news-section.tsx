@@ -1,9 +1,30 @@
 import Container from '@/components/container/container';
 import H2Heading from '@/components/h2-heading/h2-heading';
 import NewsSlider from '@/components/news-slider/news-slider';
+import { PostDataTypes } from '@/types/post-types';
+import { getPostsData } from '@/lib/getPostsData';
 import styles from './news-section.module.scss';
 
-const NewsSection = () => {
+const NewsSection = async () => {
+    const data = await getPostsData();
+
+    /**
+     * Here i added placehoder image that I hosted on free service just for demo purposes
+     * Also, I hardcoded year and date because there is no such data in response
+     */
+
+    const dataForSlider = data?.map((post: PostDataTypes) => {
+        return {
+            id: post.id,
+            title: post.title,
+            year: 2025,
+            date: '10.12.2024',
+            image: 'https://i.postimg.cc/T20Y3qM6/placeholder-Image.png',
+        };
+    });
+
+    console.log('NEW SLIDER DATA', dataForSlider);
+
     return (
         <section className={styles['news-section']}>
             <Container removePaddingRightOnMobile>
@@ -12,7 +33,7 @@ const NewsSection = () => {
                         text="Nos dernières actualités"
                         alignment="center"
                     />
-                    <NewsSlider />
+                    <NewsSlider data={dataForSlider} />
                 </div>
             </Container>
         </section>
