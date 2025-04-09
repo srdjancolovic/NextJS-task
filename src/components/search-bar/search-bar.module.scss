@@ -1,0 +1,36 @@
+@use '../../styles/colors' as colors;
+@use '../../styles/mixins' as mixin;
+
+.search-bar {
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+
+    input {
+        width: 100%;
+        background-color: colors.$green1;
+        color: colors.$white;
+        padding: 16px 60px 16px 20px;
+        border-radius: 4px;
+        font-size: 16px;
+        letter-spacing: -0.03em;
+        border: none;
+        height: 53px;
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+
+        &::placeholder {
+            color: colors.$white;
+        }
+    }
+
+    &__action {
+        position: absolute;
+        right: 2px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

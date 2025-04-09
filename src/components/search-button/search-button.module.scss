@@ -1,0 +1,36 @@
+@use '../../styles/colors' as colors;
+
+.search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &--input {
+        background-color: colors.$green2;
+        height: 49px;
+        width: 58px;
+        border-radius: 2px;
+    }
+
+    &--header {
+        background-color: colors.$green2;
+        border-radius: 4px;
+        border: 2px solid colors.$green1;
+
+        svg {
+            background-color: colors.$green2;
+            height: 53px;
+            width: 62px;
+            padding: 15.5px 20px;
+            border-radius: 2px;
+        }
+    }
+}

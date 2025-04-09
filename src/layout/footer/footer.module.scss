@@ -142,6 +142,10 @@
             @include mixin.mq('from', 767) {
                 display: none;
             }
+
+            p {
+                font-size: 14px;
+            }
         }
     }
 

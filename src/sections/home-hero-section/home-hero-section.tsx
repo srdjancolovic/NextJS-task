@@ -1,7 +1,10 @@
 import Container from '@/components/container/container';
 import H1Heading from '@/components/h1-heading/h1-heading';
+import Image from 'next/image';
+import SearchBar from '@/components/search-bar/search-bar';
 import Text from '@/components/text/text';
 import { homeHeroHeadingData } from '@/data/home-hero-data';
+import placeholderImage from '../../../public/assets/images/buildingImage.png';
 import styles from './home-hero-section.module.scss';
 
 const HomeHeroSection = () => {
@@ -26,10 +29,19 @@ const HomeHeroSection = () => {
                             content={homeHeroHeadingData?.description}
                             size={20}
                             color="darkGray"
+                            lineHeight={120}
                         />
-                        <div>Search input</div>
+                        <SearchBar />
                     </div>
-                    <div>Images</div>
+                    <div className={styles['home-hero-section__image']}>
+                        <Image
+                            src={placeholderImage}
+                            width={952}
+                            height={1209}
+                            alt="Image frame"
+                            className={styles['home-hero-section__main-image']}
+                        />
+                    </div>
                 </div>
             </Container>
         </section>

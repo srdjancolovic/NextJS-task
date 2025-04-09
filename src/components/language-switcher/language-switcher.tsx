@@ -1,6 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
+import { hostGrotesk } from '../fonts/fonts';
 import styles from './language-switcher.module.scss';
 import { useState } from 'react';
 
@@ -11,19 +12,27 @@ const LanguageSwitcher = () => {
         <div className={styles['language-switcher']}>
             <button
                 onClick={() => setActiveLang('NL')}
-                className={classNames(styles['language-switcher__button'], {
-                    [styles['language-switcher__button--active']]:
-                        activeLang === 'NL',
-                })}
+                className={classNames(
+                    styles['language-switcher__button'],
+                    hostGrotesk.className,
+                    {
+                        [styles['language-switcher__button--active']]:
+                            activeLang === 'NL',
+                    }
+                )}
             >
                 NL
             </button>
             <button
                 onClick={() => setActiveLang('FR')}
-                className={classNames(styles['language-switcher__button'], {
-                    [styles['language-switcher__button--active']]:
-                        activeLang === 'FR',
-                })}
+                className={classNames(
+                    styles['language-switcher__button'],
+                    hostGrotesk.className,
+                    {
+                        [styles['language-switcher__button--active']]:
+                            activeLang === 'FR',
+                    }
+                )}
             >
                 FR
             </button>
