@@ -4,6 +4,7 @@
 .container {
     max-width: 1640px;
     margin-inline: auto;
+    position: relative;
 
     &--default-padding {
         padding-inline: 20px;

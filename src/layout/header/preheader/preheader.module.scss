@@ -1,0 +1,12 @@
+@use '../../../styles/colors' as colors;
+@use '../../../styles/mixins' as mixin;
+
+.preheader {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    background-color: colors.$white;
+    padding-block: 18px;
+}

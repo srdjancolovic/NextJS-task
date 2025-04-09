@@ -9,12 +9,14 @@
         display: flex;
 
         @include mixin.mq('fromto', 480, 1680) {
-            padding-block: 85px;
+            padding-bottom: 85px;
+            padding-top: 125px;
         }
 
         @include mixin.mq('to', 480) {
             padding-top: 152px;
             padding-bottom: 80px;
+            gap: 24px;
         }
 
         @include mixin.mq('from', 480) {
@@ -24,12 +26,15 @@
 
         @include mixin.mq('to', 1680) {
             flex-direction: column-reverse;
-            gap: 24px;
 
             h1,
             p {
                 text-align: center;
             }
+        }
+
+        @include mixin.mq('fromto', 480, 1680) {
+            gap: 40px;
         }
     }
 

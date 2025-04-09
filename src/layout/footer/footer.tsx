@@ -82,7 +82,6 @@ const Footer = () => {
                                                     }
                                                 >
                                                     <CustomLink
-                                                        key={subLink.title}
                                                         linkText={subLink.title}
                                                         linkTo={subLink.linkTo}
                                                         color="light-gray"

@@ -2,6 +2,7 @@ type NavLink = {
     title: string;
     linkTo: string;
     subMenu?: NavLink[];
+    hideOnMainNav?: boolean;
 };
 
 export const mainNavigationLinks: NavLink[] = [
@@ -28,6 +29,10 @@ export const mainNavigationLinks: NavLink[] = [
         linkTo: '/',
     },
     {
+        title: 'Droit de plainte',
+        linkTo: '/',
+    },
+    {
         title: 'Publications',
         linkTo: '/',
     },
@@ -38,6 +43,7 @@ export const mainNavigationLinks: NavLink[] = [
     {
         title: 'Je suis détenu(e)',
         linkTo: '/',
+        hideOnMainNav: true,
     },
 ];
 

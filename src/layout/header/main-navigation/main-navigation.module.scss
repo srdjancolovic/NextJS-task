@@ -1,0 +1,84 @@
+@use '../../../styles/colors' as colors;
+@use '../../../styles/mixins' as mixin;
+
+.main-navigation {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 83px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    z-index: 2;
+
+    &__links-cta {
+        display: flex;
+        align-items: center;
+
+        @include mixin.mq('from', 1680) {
+            gap: 135px;
+        }
+
+        @include mixin.mq('fromto', 1280, 1680) {
+            gap: 50px;
+        }
+    }
+
+    &__links-wrapper {
+        display: flex;
+        gap: 42px;
+        padding: 14px 20px;
+        background-color: colors.$white;
+        border-radius: 4px;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        &--hide {
+            display: none;
+        }
+
+        &:hover {
+            .main-navigation__sub-links {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            .main-navigation__link-sub-menu-indicator {
+                transform: rotate(-180deg);
+            }
+        }
+    }
+
+    &__link-sub-menu-indicator {
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    &__sub-links {
+        position: absolute;
+        top: 45px;
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: left;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background-color: colors.$white;
+        padding: 15px 20px;
+        transition: all 0.3s ease;
+    }
+
+    &__cta {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+
+        a {
+            align-self: stretch;
+        }
+    }
+}
