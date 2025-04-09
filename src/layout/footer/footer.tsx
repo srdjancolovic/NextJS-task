@@ -74,6 +74,7 @@ const Footer = () => {
                                             />
                                             {link.subMenu?.map((subLink) => (
                                                 <div
+                                                    key={subLink.title}
                                                     className={
                                                         styles[
                                                             'footer__links-group--subgroup-links'
