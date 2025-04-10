@@ -21,6 +21,7 @@ const NewsSlider: FC<NeWsSliderProps> = ({ data }) => {
     const slidesRef = useRef<HTMLDivElement[]>([]);
 
     //This is logic for slides to be equal height no matter the content inside slide
+    //NOTE:Need to refresh page when switching responsive mode to refresh page height
     useEffect(() => {
         if (slidesRef.current.length) {
             const maxHeight = Math.max(
