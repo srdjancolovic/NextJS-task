@@ -15,7 +15,6 @@ const NewsSection = async () => {
      * Also, I hardcoded year and date because there is no such data in response
      */
 
-    console.log('DATA', data);
     const dataForSlider = data?.map((post: PostDataTypes) => {
         return {
             id: post.id,
@@ -25,8 +24,6 @@ const NewsSection = async () => {
             image: 'https://i.postimg.cc/T20Y3qM6/placeholder-Image.png',
         };
     });
-
-    console.log('NEW SLIDER DATA', dataForSlider);
 
     return (
         <section className={styles['news-section']}>
