@@ -12,7 +12,7 @@
     transition: all 0.3s ease-in-out;
     padding: 20px 20px 24px;
     overflow: auto;
-    border-bottom: 1px solid colors.$white3;
+    border-top: 1px solid colors.$white2;
 
     &--is-open {
         left: 0;
