@@ -11,6 +11,7 @@ type LinkButtonProps = {
     color?: string;
     background?: string;
     children?: ReactNode;
+    size?: number;
 };
 
 const LinkButton: FC<LinkButtonProps> = ({
@@ -20,12 +21,14 @@ const LinkButton: FC<LinkButtonProps> = ({
     color = 'white',
     background = 'green',
     children,
+    size = 16,
 }) => {
     return (
         <Link
             href={linkTo}
             className={classNames(
                 styles['link-button'],
+                [styles[`link-button--siye-${size}`]],
                 [styles[`link-button--width-${width}`]],
                 [styles[`link-button--color-${color}`]],
                 [styles[`link-button--background-${background}`]]

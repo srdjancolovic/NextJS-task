@@ -25,6 +25,16 @@
         font-size: 14px;
     }
 
+    &--size-16 {
+        @include mixin.mq('from', 481) {
+            font-size: 16px;
+        }
+
+        @include mixin.mq('to', 480) {
+            font-size: 14px;
+        }
+    }
+
     &--width-fit {
         width: fit-content;
     }

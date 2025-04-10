@@ -54,13 +54,9 @@
 
         @include mixin.mq('from', 1280) {
             &:hover {
-                .main-navigation__sub-links {
+                .main-navigation__submenu-wrapper {
                     opacity: 1;
                     transform: scale(1);
-                }
-
-                .main-navigation__link-sub-menu-indicator {
-                    transform: rotate(-180deg);
                 }
             }
         }
@@ -72,14 +68,26 @@
     }
 
     &__link-sub-menu-indicator {
-        cursor: pointer;
         transition: all 0.3s ease;
 
-        @include mixin.mq('to', 1280) {
+        button {
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        &--open {
+            transform: rotate(-180deg);
         }
     }
 
     &__submenu-wrapper {
+        @include mixin.mq('from', 1280) {
+            position: absolute;
+            top: 20px;
+            opacity: 0;
+            transform: scale(0);
+            transform-origin: left;
+        }
     }
 
     &__sub-links {
@@ -94,16 +102,13 @@
             white-space: nowrap;
         }
 
-        @include mixin.mq('from', 1280) {
-            position: absolute;
-            top: 20px;
-            opacity: 0;
-            transform: scale(0);
-            transform-origin: left;
-        }
-
-        &--open {
-        }
+        // @include mixin.mq('from', 1280) {
+        //     position: absolute;
+        //     top: 20px;
+        //     opacity: 0;
+        //     transform: scale(0);
+        //     transform-origin: left;
+        // }
     }
 
     &__cta {

@@ -28,6 +28,12 @@
         display: flex;
         justify-content: center;
 
+        a {
+            @include mixin.mq('to', 480) {
+                height: 47px;
+            }
+        }
+
         @include mixin.mq('from', 480) {
             display: none;
         }

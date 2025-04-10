@@ -18,10 +18,7 @@ const MainNavigationLinks: FC<MainNavigationLinksProps> = ({
 }) => {
     const [height, setHeight] = useState<Height>(0);
 
-    const [showSubMenu, setShowSubMenu] = useState<boolean>(false);
-
     const toggleSubMenuHandler = () => {
-        setShowSubMenu(!showSubMenu);
         setHeight(height === 0 ? 'auto' : 0);
     };
 
@@ -39,19 +36,31 @@ const MainNavigationLinks: FC<MainNavigationLinksProps> = ({
                         <div
                             className={styles['main-navigation__link-wrapper']}
                         >
-                            <CustomLink
-                                key={link.title}
-                                linkText={link.title}
-                                linkTo={link.linkTo}
-                                mobileSize={isInSidebarMenu ? 20 : undefined}
-                            />
+                            <div
+                                onMouseEnter={() => setHeight('auto')}
+                                onMouseLeave={() => setHeight(0)}
+                            >
+                                <CustomLink
+                                    key={link.title}
+                                    linkText={link.title}
+                                    linkTo={link.linkTo}
+                                    mobileSize={
+                                        isInSidebarMenu ? 20 : undefined
+                                    }
+                                />
+                            </div>
                             {link.subMenu && (
                                 <div
-                                    className={
+                                    className={classNames(
                                         styles[
                                             'main-navigation__link-sub-menu-indicator'
-                                        ]
-                                    }
+                                        ],
+                                        {
+                                            [styles[
+                                                'main-navigation__link-sub-menu-indicator--open'
+                                            ]]: height !== 0,
+                                        }
+                                    )}
                                 >
                                     <button onClick={toggleSubMenuHandler}>
                                         <ChevronDown />
@@ -71,6 +80,7 @@ const MainNavigationLinks: FC<MainNavigationLinksProps> = ({
                                     className={
                                         styles['main-navigation__sub-links']
                                     }
+                                    onMouseEnter={() => setHeight('auto')}
                                 >
                                     {link.subMenu?.map((subLink) => (
                                         <CustomLink
