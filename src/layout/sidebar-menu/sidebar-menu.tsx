@@ -41,6 +41,7 @@ const SidebarMenu = () => {
                             linkText={link.title}
                             linkTo={link.linkTo}
                             mobileSize={14}
+                            hide={link.hideOnSidebarMenu}
                         />
                     ))}
                 </div>

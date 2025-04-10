@@ -11,6 +11,7 @@ type CustomLinkProps = {
     weight?: number;
     color?: string;
     lineHeight?: number;
+    hide?: boolean;
 };
 
 const CustomLink: FC<CustomLinkProps> = ({
@@ -21,6 +22,7 @@ const CustomLink: FC<CustomLinkProps> = ({
     weight = 400,
     color = 'black',
     lineHeight = 100,
+    hide = false,
 }) => {
     const linkClasses = classNames(
         styles['custom-link'],
@@ -28,7 +30,10 @@ const CustomLink: FC<CustomLinkProps> = ({
         styles[`custom-link--mobile-size-${mobileSize}`],
         styles[`custom-link--weight-${weight}`],
         styles[`custom-link--color-${color}`],
-        styles[`custom-link--line-height-${lineHeight}`]
+        styles[`custom-link--line-height-${lineHeight}`],
+        {
+            [styles['custom-link--hide']]: hide,
+        }
     );
     return (
         <Link className={linkClasses} href={linkTo}>

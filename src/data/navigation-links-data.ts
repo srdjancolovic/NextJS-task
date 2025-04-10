@@ -3,6 +3,8 @@ type NavLink = {
     linkTo: string;
     subMenu?: NavLink[];
     hideOnMainNav?: boolean;
+    hideOnSidebarMenu?: boolean;
+    hideOnPreheader?: boolean;
 };
 
 export const mainNavigationLinks: NavLink[] = [
@@ -59,6 +61,12 @@ export const secondaryNavigationLinks: NavLink[] = [
     {
         title: 'Devenir membre',
         linkTo: '/',
+        hideOnSidebarMenu: true,
+    },
+    {
+        title: 'Job',
+        linkTo: '/',
+        hideOnPreheader: true,
     },
     {
         title: 'Contact',

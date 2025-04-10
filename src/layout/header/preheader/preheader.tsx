@@ -12,6 +12,7 @@ const Preheader = () => {
                     linkTo={link.linkTo}
                     size={14}
                     color="darkGray"
+                    hide={link.hideOnPreheader}
                 />
             ))}
         </nav>

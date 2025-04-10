@@ -68,4 +68,8 @@
     &--color-light-gray {
         color: colors.$gray2;
     }
+
+    &--hide {
+        display: none;
+    }
 }
