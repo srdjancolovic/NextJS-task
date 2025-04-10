@@ -9,13 +9,12 @@
     max-width: 400px;
     width: 100%;
     padding: 10px 20px 10px 10px;
+    background-color: colors.$white;
 
     &--sidebar {
-        background-color: colors.$lightGray;
-    }
-
-    &--default {
-        background-color: colors.$white;
+        @include mixin.mq('to', 480) {
+            border-bottom: 1px solid colors.$lightGray;
+        }
     }
 
     &__actions {
