@@ -1,9 +1,14 @@
 @use '../../styles/mixins' as mixin;
 
 .news-section {
-    @include mixin.mq('from', 480) {
+    @include mixin.mq('from', 1280) {
         padding-top: 166px;
         padding-bottom: 283px;
+    }
+
+    @include mixin.mq('fromto', 480, 1280) {
+        padding-top: 120px;
+        padding-bottom: 120px;
     }
 
     @include mixin.mq('to', 480) {
