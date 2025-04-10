@@ -44,14 +44,18 @@
         width: 100%;
         flex: 1;
 
+        @include mixin.mq('from', 1680) {
+            padding-right: 40px;
+        }
+
         @include mixin.mq('fromto', 480, 1680) {
             align-items: center;
+            max-width: 1280px;
         }
 
         @include mixin.mq('from', 480) {
             gap: 40px;
             min-width: 640px;
-            padding-right: 40px;
         }
 
         @include mixin.mq('to', 480) {
@@ -66,8 +70,8 @@
         }
 
         @include mixin.mq('fromto', 480, 1680) {
-            height: 400px;
-            max-width: 550px;
+            height: 500px;
+            max-width: 850px;
             width: 100%;
         }
 
