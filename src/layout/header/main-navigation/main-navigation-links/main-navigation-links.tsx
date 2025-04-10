@@ -17,9 +17,20 @@ const MainNavigationLinks: FC<MainNavigationLinksProps> = ({
     isInSidebarMenu,
 }) => {
     const [height, setHeight] = useState<Height>(0);
+    const [animateArrow, setAniamteArrow] = useState<boolean>(false);
 
-    const toggleSubMenuHandler = () => {
+    const toggleSubMenuOnClickHandler = () => {
         setHeight(height === 0 ? 'auto' : 0);
+    };
+
+    const toggleSubMenuOnCHoverHandler = (hasSubmenu: boolean) => {
+        if (hasSubmenu) {
+            setHeight('auto');
+            setAniamteArrow(true);
+        } else {
+            setHeight(0);
+            setAniamteArrow(true);
+        }
     };
 
     return (
@@ -37,7 +48,11 @@ const MainNavigationLinks: FC<MainNavigationLinksProps> = ({
                             className={styles['main-navigation__link-wrapper']}
                         >
                             <div
-                                onMouseEnter={() => setHeight('auto')}
+                                onMouseEnter={() =>
+                                    toggleSubMenuOnCHoverHandler(
+                                        link.subMenu ? true : false
+                                    )
+                                }
                                 onMouseLeave={() => setHeight(0)}
                             >
                                 <CustomLink
@@ -62,7 +77,9 @@ const MainNavigationLinks: FC<MainNavigationLinksProps> = ({
                                         }
                                     )}
                                 >
-                                    <button onClick={toggleSubMenuHandler}>
+                                    <button
+                                        onClick={toggleSubMenuOnClickHandler}
+                                    >
                                         <ChevronDown />
                                     </button>
                                 </div>
