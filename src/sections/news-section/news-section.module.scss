@@ -1,6 +1,8 @@
+@use '../../styles/colors' as colors;
 @use '../../styles/mixins' as mixin;
 
 .news-section {
+    background-color: colors.$white;
     @include mixin.mq('from', 1280) {
         padding-top: 166px;
         padding-bottom: 283px;
