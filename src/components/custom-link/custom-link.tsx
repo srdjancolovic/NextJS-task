@@ -1,3 +1,5 @@
+'use client';
+
 import { FC } from 'react';
 import Link from 'next/link';
 import classNames from 'classnames';
@@ -12,6 +14,7 @@ type CustomLinkProps = {
     color?: string;
     lineHeight?: number;
     hide?: boolean;
+    handleClick?: () => void; // Optional handleClick prop
 };
 
 const CustomLink: FC<CustomLinkProps> = ({
@@ -23,6 +26,7 @@ const CustomLink: FC<CustomLinkProps> = ({
     color = 'black',
     lineHeight = 100,
     hide = false,
+    handleClick, // Destructuring handleClick
 }) => {
     const linkClasses = classNames(
         styles['custom-link'],
@@ -35,10 +39,19 @@ const CustomLink: FC<CustomLinkProps> = ({
             [styles['custom-link--hide']]: hide,
         }
     );
+
     return (
-        <Link className={linkClasses} href={linkTo}>
-            {' '}
-            {linkText}{' '}
+        <Link href={linkTo} legacyBehavior>
+            <a
+                onClick={() => {
+                    if (handleClick) {
+                        handleClick();
+                    }
+                }}
+                className={linkClasses}
+            >
+                {linkText}
+            </a>
         </Link>
     );
 };

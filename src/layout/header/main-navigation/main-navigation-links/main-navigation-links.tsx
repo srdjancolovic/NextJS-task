@@ -8,6 +8,7 @@ import CustomLink from '@/components/custom-link/custom-link';
 import classNames from 'classnames';
 import { mainNavigationLinks } from '@/data/navigation-links-data';
 import styles from '../main-navigation.module.scss';
+import { useAppContext } from '@/app-context/app-context';
 
 type MainNavigationLinksProps = {
     isInSidebarMenu?: boolean;
@@ -17,7 +18,7 @@ const MainNavigationLinks: FC<MainNavigationLinksProps> = ({
     isInSidebarMenu,
 }) => {
     const [height, setHeight] = useState<Height>(0);
-    const [animateArrow, setAniamteArrow] = useState<boolean>(false);
+    const { closeSidebar } = useAppContext();
 
     const toggleSubMenuOnClickHandler = () => {
         setHeight(height === 0 ? 'auto' : 0);
@@ -26,10 +27,8 @@ const MainNavigationLinks: FC<MainNavigationLinksProps> = ({
     const toggleSubMenuOnCHoverHandler = (hasSubmenu: boolean) => {
         if (hasSubmenu) {
             setHeight('auto');
-            setAniamteArrow(true);
         } else {
             setHeight(0);
-            setAniamteArrow(true);
         }
     };
 
@@ -62,6 +61,7 @@ const MainNavigationLinks: FC<MainNavigationLinksProps> = ({
                                     mobileSize={
                                         isInSidebarMenu ? 20 : undefined
                                     }
+                                    handleClick={closeSidebar}
                                 />
                             </div>
                             {link.subMenu && (
@@ -108,6 +108,7 @@ const MainNavigationLinks: FC<MainNavigationLinksProps> = ({
                                             mobileSize={
                                                 isInSidebarMenu ? 20 : undefined
                                             }
+                                            handleClick={closeSidebar}
                                         />
                                     ))}
                                 </div>

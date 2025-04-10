@@ -8,6 +8,7 @@ import Container from '@/components/container/container';
 import CustomLink from '@/components/custom-link/custom-link';
 import Image from 'next/image';
 import LanguageSwitcher from '@/components/language-switcher/language-switcher';
+import Link from 'next/link';
 import SocialLink from '@/components/social-link/social-link';
 import Text from '@/components/text/text';
 import logo from '../../../public/assets/logo/logo.svg';
@@ -18,11 +19,13 @@ const Footer = () => {
         <footer className={styles.footer}>
             <Container>
                 <div className={styles['footer__content']}>
-                    <Image
-                        src={logo}
-                        alt="Logo"
-                        className={styles['footer__logo']}
-                    />
+                    <Link href="/">
+                        <Image
+                            src={logo}
+                            alt="Logo"
+                            className={styles['footer__logo']}
+                        />
+                    </Link>
                     <div className={styles['footer__data-layout']}>
                         <div className={styles['footer__data-layout-label']}>
                             <Text
