@@ -1,4 +1,4 @@
-import SearchButton from '../search-button/search-button';
+import SearchButton from '../button/search-button/search-button';
 import styles from './search-bar.module.scss';
 
 const SearchBar = () => {

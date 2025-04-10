@@ -15,15 +15,16 @@ const NewsSection = async () => {
      * Also, I hardcoded year and date because there is no such data in response
      */
 
-    const dataForSlider = data?.map((post: PostDataTypes) => {
-        return {
-            id: post.id,
-            title: post.title,
-            year: 2025,
-            date: '10.12.2024',
-            image: 'https://i.postimg.cc/T20Y3qM6/placeholder-Image.png',
-        };
-    });
+    const dataForSlider =
+        data?.map((post: PostDataTypes) => {
+            return {
+                id: post.id,
+                title: post.title,
+                year: 2025,
+                date: '10.12.2024',
+                image: 'https://i.postimg.cc/T20Y3qM6/placeholder-Image.png',
+            };
+        }) || [];
 
     return (
         <section className={styles['news-section']}>
@@ -40,8 +41,7 @@ const NewsSection = async () => {
                         linkTitle="Voir toutes les actualités"
                         linkTo="/"
                     >
-                        {' '}
-                        {<LinkArrowBold />}{' '}
+                        <LinkArrowBold />
                     </LinkButton>
                 </div>
             </Container>

@@ -14,7 +14,7 @@ type CustomLinkProps = {
     color?: string;
     lineHeight?: number;
     hide?: boolean;
-    handleClick?: () => void; // Optional handleClick prop
+    handleClick?: () => void;
 };
 
 const CustomLink: FC<CustomLinkProps> = ({
@@ -26,7 +26,7 @@ const CustomLink: FC<CustomLinkProps> = ({
     color = 'black',
     lineHeight = 100,
     hide = false,
-    handleClick, // Destructuring handleClick
+    handleClick,
 }) => {
     const linkClasses = classNames(
         styles['custom-link'],

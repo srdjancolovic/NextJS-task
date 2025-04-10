@@ -9,7 +9,7 @@ import { hostGrotesk } from '@/components/fonts/fonts';
 
 export const metadata: Metadata = {
     title: 'IT Family Test Task - Srdjan Colovic',
-    description: 'Meta description',
+    description: 'Srdjan Colovic Test Task',
 };
 
 export default function RootLayout({

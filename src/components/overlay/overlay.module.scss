@@ -8,13 +8,13 @@
     transition: opacity 0.3s ease-in-out;
     z-index: -1;
 
+    @include mixin.mq('to', 480) {
+        display: none;
+    }
+
     &--shown {
         background-color: colors.$overlayBg;
         z-index: 3;
         backdrop-filter: blur(5px);
-
-        @include mixin.mq('to', 480) {
-            display: none;
-        }
     }
 }

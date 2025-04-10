@@ -19,7 +19,7 @@ const H1Heading: FC<H1HeadingProps> = ({
                 styles['h1-heading'],
                 styles[`h1-heading--align-${alignment}`],
                 {
-                    [styles['h1-heading--underline']]: hasUnderlineText, // Corrected part
+                    [styles['h1-heading--underline']]: hasUnderlineText,
                 }
             )}
         >

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import LinkArrowBold from '@/components/icons/link-arrow-bold/link-arrow-bold';
 import LinkButton from '@/components/button/link-button/link-button';
 import MainNavigationLinks from './main-navigation-links/main-navigation-links';
-import SearchButton from '@/components/search-button/search-button';
+import SearchButton from '@/components/button/search-button/search-button';
 import logo from '../../../../public/assets/logo/logo.svg';
 import styles from './main-navigation.module.scss';
 
