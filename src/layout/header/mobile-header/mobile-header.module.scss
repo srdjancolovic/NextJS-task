@@ -1,0 +1,32 @@
+@use '../../../styles/colors' as colors;
+@use '../../../styles/mixins' as mixin;
+
+.mobile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    max-width: 400px;
+    width: 100%;
+
+    &--sidebar {
+        background-color: colors.$lightGray;
+        padding: 18px 20px 18px 10px;
+    }
+
+    &--default {
+        background-color: colors.$white;
+        padding: 10px 20px 10px 10px;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        height: 22px;
+    }
+
+    &__search-icon {
+        margin-top: 4px;
+    }
+}

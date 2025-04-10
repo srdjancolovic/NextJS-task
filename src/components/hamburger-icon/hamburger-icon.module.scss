@@ -1,0 +1,33 @@
+@use '../../styles/colors' as colors;
+@use '../../styles/mixins' as mixin;
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 5px;
+
+    &__line {
+        display: block;
+        height: 2px;
+        border-radius: 1px;
+        transition: all 0.3s ease;
+
+        &--top,
+        &--bottom {
+            width: 25px;
+            background-color: colors.$green1;
+        }
+
+        &--middle {
+            width: 15px;
+            align-self: flex-start;
+            background-color: colors.$green2;
+        }
+    }
+}

@@ -10,7 +10,7 @@
 
         @include mixin.mq('fromto', 480, 1680) {
             padding-bottom: 85px;
-            padding-top: 125px;
+            padding-top: 145px;
         }
 
         @include mixin.mq('to', 480) {

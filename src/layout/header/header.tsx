@@ -12,7 +12,7 @@ const Header = () => {
                 <MainNavigation />
             </Container>
             <div className={styles['header__mobile-navigation']}>
-                <MobileHeader />
+                <MobileHeader location="default" />
             </div>
         </header>
     );
