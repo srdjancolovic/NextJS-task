@@ -5,6 +5,7 @@ type NavLink = {
     hideOnMainNav?: boolean;
     hideOnSidebarMenu?: boolean;
     hideOnPreheader?: boolean;
+    hideInFooter?: boolean;
 };
 
 export const mainNavigationLinks: NavLink[] = [
@@ -67,6 +68,7 @@ export const secondaryNavigationLinks: NavLink[] = [
         title: 'Job',
         linkTo: '/',
         hideOnPreheader: true,
+        hideInFooter: true,
     },
     {
         title: 'Contact',

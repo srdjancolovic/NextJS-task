@@ -101,6 +101,7 @@ const Footer = () => {
                                         key={link.title}
                                         linkText={link.title}
                                         linkTo={link.linkTo}
+                                        hide={link.hideInFooter}
                                     />
                                 ))}
                             </div>
@@ -122,6 +123,7 @@ const Footer = () => {
                                     key={link.title}
                                     linkText={link.title}
                                     linkTo={link.linkTo}
+                                    color="darkGray"
                                 />
                             ))}
                         </div>
