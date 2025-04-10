@@ -2,9 +2,9 @@
 
 ## Basic Setup and Running the Project
 
-### Prerequisites
+### Node Version
 
--   Node.js version **20.3.0** (make sure to use the correct version using tools like [nvm](https://github.com/nvm-sh/nvm)).
+-   Node.js version **20.3.0**
 
 ### Steps to Run the Project
 
