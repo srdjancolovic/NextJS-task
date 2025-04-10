@@ -11,6 +11,10 @@
     width: calc(100% - 40px);
     z-index: 2;
 
+    @include mixin.mq('to', 1280) {
+        display: none;
+    }
+
     &__links-cta {
         display: flex;
         align-items: center;

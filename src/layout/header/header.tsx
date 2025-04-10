@@ -1,5 +1,6 @@
 import Container from '@/components/container/container';
 import MainNavigation from './main-navigation/main-navigation';
+import MobileHeader from './mobile-header/mobile-header';
 import Preheader from './preheader/preheader';
 import styles from './header.module.scss';
 
@@ -10,6 +11,9 @@ const Header = () => {
                 <Preheader />
                 <MainNavigation />
             </Container>
+            <div className={styles['header__mobile-navigation']}>
+                <MobileHeader />
+            </div>
         </header>
     );
 };

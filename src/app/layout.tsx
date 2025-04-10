@@ -1,5 +1,6 @@
 import '../styles/globals.scss';
 
+import { AppProvider } from '@/app-context/app-context';
 import Footer from '@/layout/footer/footer';
 import Header from '@/layout/header/header';
 import type { Metadata } from 'next';
@@ -18,9 +19,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={hostGrotesk.className}>
-                <Header />
-                {children}
-                <Footer />
+                <AppProvider>
+                    <Header />
+                    {children}
+                    <Footer />
+                </AppProvider>
             </body>
         </html>
     );

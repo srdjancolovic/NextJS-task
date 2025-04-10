@@ -9,4 +9,8 @@
     margin-left: auto;
     background-color: colors.$white;
     padding-block: 18px;
+
+    @include mixin.mq('to', 1280) {
+        display: none;
+    }
 }
