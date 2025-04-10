@@ -16,7 +16,7 @@
         @include mixin.mq('to', 480) {
             padding-top: 152px;
             padding-bottom: 80px;
-            gap: 24px;
+            gap: 36px;
         }
 
         @include mixin.mq('from', 480) {

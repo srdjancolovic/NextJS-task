@@ -16,8 +16,6 @@
 
     &__content {
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
         padding-bottom: 37px;
 
         @include mixin.mq('from', 480) {
@@ -26,6 +24,10 @@
 
         @include mixin.mq('fromto', 480, 1280) {
             gap: 36px;
+        }
+
+        @include mixin.mq('from', 1280) {
+            justify-content: space-between;
         }
 
         @include mixin.mq('to', 1280) {
@@ -45,6 +47,8 @@
 
         @include mixin.mq('to', 1280) {
             margin-inline: auto;
+            display: block;
+            width: fit-content;
         }
     }
 

@@ -40,6 +40,8 @@ const MainNavigationLinks: FC<MainNavigationLinksProps> = ({
                         className={classNames(styles['main-navigation__link'], {
                             [styles['main-navigation__link--hide']]:
                                 link.hideOnMainNav,
+                            [styles['main-navigation__link--has-chevron']]:
+                                link.subMenu,
                         })}
                         key={link.title}
                     >

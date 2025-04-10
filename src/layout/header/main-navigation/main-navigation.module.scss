@@ -45,13 +45,21 @@
     }
 
     &__link {
-        display: flex;
-        align-items: center;
-        gap: 6px;
         position: relative;
 
         &--hide {
             display: none;
+        }
+
+        &--has-chevron {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+
+            @include mixin.mq('to', 1280) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
 
         @include mixin.mq('from', 1280) {
@@ -61,11 +69,6 @@
                     transform: scale(1);
                 }
             }
-        }
-
-        @include mixin.mq('to', 1280) {
-            flex-direction: column;
-            align-items: flex-start;
         }
     }
 

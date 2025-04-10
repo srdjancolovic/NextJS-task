@@ -1,3 +1,4 @@
+import { contactDetails, footerLabels } from '@/data/footer-data';
 import {
     legalNavigationLinks,
     mainNavigationLinks,
@@ -29,7 +30,7 @@ const Footer = () => {
                     <div className={styles['footer__data-layout']}>
                         <div className={styles['footer__data-layout-label']}>
                             <Text
-                                content="Coordonnées"
+                                content={footerLabels.contactDetails}
                                 weight={500}
                                 size={20}
                                 lineHeight={135}
@@ -37,21 +38,21 @@ const Footer = () => {
                             />
                         </div>
                         <div className={styles['footer__data-layout-content']}>
-                            <Text content="Rue de Louvain, 48/2, 1000 Bruxelles" />
+                            <Text content={contactDetails.address} />
                             <CustomLink
-                                linkText="info@ccsp-belgium.be"
-                                linkTo="mailto:info@ccsp-belgium.be"
+                                linkText={contactDetails.email}
+                                linkTo={`mailto:${contactDetails.email}`}
                             />
                             <CustomLink
-                                linkText="+32 (0)2 549 94 70"
-                                linkTo="tel:+32 (0)2 549 94 70"
+                                linkText={contactDetails.phoneNumber}
+                                linkTo={`tel:${contactDetails.phoneNumber}`}
                             />
                         </div>
                     </div>
                     <div className={styles['footer__data-layout']}>
                         <div className={styles['footer__data-layout-label']}>
                             <Text
-                                content="Accès rapides"
+                                content={footerLabels.quickAccess}
                                 weight={500}
                                 size={20}
                                 lineHeight={135}
@@ -110,7 +111,7 @@ const Footer = () => {
                     <div className={styles['footer__data-layout']}>
                         <div className={styles['footer__data-layout-label']}>
                             <Text
-                                content="Légal"
+                                content={footerLabels.legal}
                                 weight={500}
                                 size={20}
                                 lineHeight={135}
