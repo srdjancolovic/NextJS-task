@@ -1,10 +1,17 @@
 import ChevronDown from '@/components/icons/chevron-down/chevron-down';
 import CustomLink from '@/components/custom-link/custom-link';
+import { FC } from 'react';
 import classNames from 'classnames';
 import { mainNavigationLinks } from '@/data/navigation-links-data';
 import styles from '../main-navigation.module.scss';
 
-const MainNavigationLinks = () => {
+type MainNavigationLinksProps = {
+    isInSidebarMenu?: boolean;
+};
+
+const MainNavigationLinks: FC<MainNavigationLinksProps> = ({
+    isInSidebarMenu,
+}) => {
     return (
         <>
             {mainNavigationLinks?.map((link) => {
@@ -20,6 +27,7 @@ const MainNavigationLinks = () => {
                             key={link.title}
                             linkText={link.title}
                             linkTo={link.linkTo}
+                            mobileSize={isInSidebarMenu ? 20 : undefined}
                         />
                         {link.subMenu && (
                             <div
@@ -42,6 +50,9 @@ const MainNavigationLinks = () => {
                                         linkText={subLink.title}
                                         linkTo={subLink.linkTo}
                                         color="light-gray"
+                                        mobileSize={
+                                            isInSidebarMenu ? 20 : undefined
+                                        }
                                     />
                                 ))}
                             </div>

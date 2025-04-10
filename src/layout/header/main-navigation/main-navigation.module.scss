@@ -45,14 +45,16 @@
             display: none;
         }
 
-        &:hover {
-            .main-navigation__sub-links {
-                opacity: 1;
-                transform: scale(1);
-            }
+        @include mixin.mq('from', 1280) {
+            &:hover {
+                .main-navigation__sub-links {
+                    opacity: 1;
+                    transform: scale(1);
+                }
 
-            .main-navigation__link-sub-menu-indicator {
-                transform: rotate(-180deg);
+                .main-navigation__link-sub-menu-indicator {
+                    transform: rotate(-180deg);
+                }
             }
         }
     }

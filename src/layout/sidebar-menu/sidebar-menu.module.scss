@@ -27,4 +27,10 @@
         gap: 40px;
         flex-direction: column;
     }
+
+    &__main-links {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
 }
