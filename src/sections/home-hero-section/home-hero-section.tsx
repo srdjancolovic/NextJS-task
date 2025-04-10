@@ -4,6 +4,7 @@ import Image from 'next/image';
 import SearchBar from '@/components/search-bar/search-bar';
 import Text from '@/components/text/text';
 import { homeHeroHeadingData } from '@/data/home-hero-data';
+import imageFrame from '../../../public/assets/images/imageFrame.png';
 import placeholderImage from '../../../public/assets/images/buildingImage.png';
 import styles from './home-hero-section.module.scss';
 
@@ -40,6 +41,15 @@ const HomeHeroSection = () => {
                             height={1209}
                             alt="Image frame"
                             className={styles['home-hero-section__main-image']}
+                        />
+                        <Image
+                            src={imageFrame}
+                            width={952}
+                            height={1209}
+                            alt="Image frame"
+                            className={
+                                styles['home-hero-section__frame-for-image']
+                            }
                         />
                     </div>
                 </div>

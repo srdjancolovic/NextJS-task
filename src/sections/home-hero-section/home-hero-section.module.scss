@@ -61,7 +61,7 @@
 
     &__image {
         @include mixin.mq('from', 1680) {
-            height: 1209px;
+            height: 1132px;
             margin-right: 245px;
             min-width: 963px;
         }
@@ -96,8 +96,13 @@
 
     &__frame-for-image {
         position: absolute;
-        right: 0;
-        top: 0;
+        right: -132px;
+        top: -75px;
         z-index: 1;
+        min-width: 963px;
+
+        @include mixin.mq('to', 1680) {
+            display: none;
+        }
     }
 }

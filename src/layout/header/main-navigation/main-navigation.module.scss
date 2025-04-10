@@ -24,7 +24,7 @@
         }
 
         @include mixin.mq('fromto', 1280, 1680) {
-            gap: 50px;
+            gap: 30px;
         }
     }
 
@@ -36,10 +36,17 @@
         border-radius: 4px;
     }
 
+    &__link-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
     &__link {
         display: flex;
         align-items: center;
         gap: 6px;
+        position: relative;
 
         &--hide {
             display: none;
@@ -57,25 +64,46 @@
                 }
             }
         }
+
+        @include mixin.mq('to', 1280) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__link-sub-menu-indicator {
         cursor: pointer;
         transition: all 0.3s ease;
+
+        @include mixin.mq('to', 1280) {
+        }
+    }
+
+    &__submenu-wrapper {
     }
 
     &__sub-links {
-        position: absolute;
-        top: 43px;
-        opacity: 0;
-        transform: scale(0);
-        transform-origin: left;
         display: flex;
         flex-direction: column;
         gap: 16px;
         background-color: colors.$white;
         padding: 15px 20px;
         transition: all 0.3s ease;
+
+        a {
+            white-space: nowrap;
+        }
+
+        @include mixin.mq('from', 1280) {
+            position: absolute;
+            top: 20px;
+            opacity: 0;
+            transform: scale(0);
+            transform-origin: left;
+        }
+
+        &--open {
+        }
     }
 
     &__cta {
