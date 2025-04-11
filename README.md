@@ -1,4 +1,4 @@
-# IT Family Test Task
+# NextJS Test Task
 
 ## Basic Setup and Running the Project
 
