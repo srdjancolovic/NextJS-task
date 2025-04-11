@@ -12,14 +12,14 @@
    If you haven't already, clone the repository to your local machine:
 
     ```sh
-    git clone https://github.com/yourusername/nextjs-test-task.git
+    git clone https://github.com/srdjancolovic/NextJS-task.git
     ```
 
 2. **Navigate to the Project Directory**  
    After cloning the repository, navigate into the project folder:
 
     ```sh
-    cd nextjs-test-task
+    cd NextJS-task
     ```
 
 3. **Install Dependencies**  
