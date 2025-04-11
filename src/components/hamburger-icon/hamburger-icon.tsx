@@ -1,41 +1,22 @@
 'use client';
 
 import { FC } from 'react';
+import HamburgerButtonIcon from '../icons/hamburger-button-icon/hamburger-button-icon';
 import classNames from 'classnames';
 import styles from './hamburger-icon.module.scss';
 
 type HamburgerIconProps = {
     onClick?: () => void;
-    isOpen?: boolean;
 };
 
-const HamburgerIcon: FC<HamburgerIconProps> = ({ onClick, isOpen }) => {
+const HamburgerIcon: FC<HamburgerIconProps> = ({ onClick }) => {
     return (
         <button
-            className={classNames(styles['hamburger'], {
-                [styles['is-open']]: isOpen,
-            })}
+            className={styles.hamburger}
             onClick={onClick}
             aria-label="Toggle menu"
         >
-            <span
-                className={classNames(
-                    styles['hamburger__line'],
-                    styles['hamburger__line--top']
-                )}
-            />
-            <span
-                className={classNames(
-                    styles['hamburger__line'],
-                    styles['hamburger__line--middle']
-                )}
-            />
-            <span
-                className={classNames(
-                    styles['hamburger__line'],
-                    styles['hamburger__line--bottom']
-                )}
-            />
+            <HamburgerButtonIcon />
         </button>
     );
 };
