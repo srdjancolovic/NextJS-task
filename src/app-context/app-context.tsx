@@ -4,7 +4,6 @@ import { ReactNode, createContext, useContext, useState } from 'react';
 
 type AppContextType = {
     isSidebarOpen: boolean;
-    toggleSidebar: () => void;
     openSidebar: () => void;
     closeSidebar: () => void;
 };
@@ -14,13 +13,11 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export const AppProvider = ({ children }: { children: ReactNode }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-    const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
     const openSidebar = () => setIsSidebarOpen(true);
     const closeSidebar = () => setIsSidebarOpen(false);
 
     const value: AppContextType = {
         isSidebarOpen,
-        toggleSidebar,
         openSidebar,
         closeSidebar,
     };
