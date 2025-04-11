@@ -2,7 +2,6 @@
 
 import { FC } from 'react';
 import HamburgerButtonIcon from '../icons/hamburger-button-icon/hamburger-button-icon';
-import classNames from 'classnames';
 import styles from './hamburger-icon.module.scss';
 
 type HamburgerIconProps = {
